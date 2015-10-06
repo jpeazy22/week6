@@ -1,4 +1,4 @@
-
+var fs = require('fs');
 /**
  * Module dependencies.
  */
@@ -26,8 +26,24 @@ app.use(express.static(path.join(__dirname, 'public')));
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
+//ROUTES!!!!!!
+//=-=-=-=-=-=-=-=-==BLOCKING CODE =-=-=-=-=-=-==-=-//
+// app.get('/', function(req, res){// route handlers  cant use unless in here.
+// 	var fileContents = fs.readFileSync('./public/data.txt');
+// 	res.header('Content-Type', 'text/html');
+// 	res.send(fileContents)
+// });
 
-app.get('/', routes.index);
+//-=-=-=-=-=-=-=-=-=--NON-BLOCKING CODE -=-=-=-=-=-=//
+
+app.get('/', function(req, res){// route handlers cant use unless in here.
+	fs.readFile('./public/data.txt', function(err, data){
+		console.log(data)
+		res.header('Content-Type', 'text/html');
+		res.send(data)
+	});
+});
+
 app.get('/users', user.list);
 
 http.createServer(app).listen(app.get('port'), function(){
