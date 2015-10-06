@@ -38,7 +38,7 @@ if ('development' == app.get('env')) {
 
 app.get('/', function(req, res){// route handlers cant use unless in here.
 	fs.readFile('./public/data.txt', function(err, data){
-		console.log(data)
+		// console.log(data)
 		res.header('Content-Type', 'text/html');
 		res.send(data)
 	});
