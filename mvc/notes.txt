@@ -1,0 +1,20 @@
+MVC - Architecture Pattern  
+Model - View - Controller
+
+Models 		- represent our data (in Angular: Services / Factories)
+Views		- what the client sees (in Angular: rendered html)
+Controllers	- glue between the Models / views (in Angular : controller functions)
+
+$scope.greeting
+{{greeting}}
+
+
+AJAX - Asynchronous Javascript AND XML
+
+AJAJ - Asynchronous Javascript And JSON
+
+when you submit a form
+<form action="/submit" method="POST">  this automatically refreshes the page.
+it submits to the server but the browers will still refresh the page.  AJAX lets us do more before refresh.
+
+$http

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="HalloweenApp">
+	<head>
+		<title>MVC</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.js"></script>
+
+	</head>
+	<body ng-controller="pumpkinTroller">
+		<h3>{{greeting}}</h3>
+
+		<form ng-submit="createCostume()">  <!-- not going to submit the page. will prevent the browser and let ajax handle it. -->
+			<input ng-model="newCostume.name" placeholder="Costume Name">
+			<input ng-model="newCostume.inappropriateness" placeholder="Inappropriateness">
+			<input ng-model="newCostume.missingAccessories" placeholder="Accessories NOT Included">
+
+			<input type="submit">
+		</form>
+
+		<div>
+			<ul>
+				<li ng-repeat="costume in costumes">
+					{{costume.name}}
+
+				</li>
+			</ul>
+		</div>
+
+		<script type="text/javascript" src="/js/main.js"></script>
+	</body>
+</html>
