@@ -5,7 +5,7 @@ angular.module('HalloweenApp', [])
 angular.module('HalloweenApp')
 	.controller('pumpkinTroller', ['$scope', '$http', function($scope, $http){
 		$scope.greeting = "Happy Halloween"
-		// this refers to the rount in app.js to get the costumes.
+		// this refers to the route in app.js to get the costumes.
 		$http.get('/getcostumes') 
 			.then(function(returnData){  // callback function.  
 				$scope.costumes = returnData.data // this represents the response. 

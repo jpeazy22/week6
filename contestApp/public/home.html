@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="contestApp">
+	<head>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.js"></script>
+		<title>Contest App</title>
+	</head>
+	<body ng-controller="iceCreamTroller">
+		<h3>Instructions</h3>
+		<h4>Part I: Video Submissions</h4>
+		<p>Create a page where the user can submit an entry for the contest. The page should consist of a form with the following fields:</p>
+		<h1>{{allContestants}}</h1>
+		<form ng-submit="submitContestants()">
+			<input ng-model="newEntry.name" placeholder="Contestant Name">
+			<input ng-model="newEntry.url" placeholder="URL to Youtube">
+			<input ng-model="newEntry.title" placeholder="Title">
+			<input ng-model="newEntry.description" placeholder="Description">
+			<input type="submit">
+		</form>
+
+		<div>
+			<ul>
+				<li ng-repeat="contestant in allContestants">{{contestant.name}}</li>
+			</ul>
+		</div>
+
+		<p>Stop accepting new submissions after 8 submissions have been submitted. Display a message on the submission page that the contest is full.</p>
+
+		<script type="text/javascript" src="main.js"></script>
+	</body>
+</html>
